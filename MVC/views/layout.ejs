@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/layout.css">
+<% if (typeof style !== 'undefined' && style) { -%>
+    <%- style %>
+<% } -%>
+        <%- defineContent('scripts') %>
+
+        <script type="text/javascript">
+            const [navigationEntry] = performance.getEntriesByType('navigation');
+            const isReloading = navigationEntry && navigationEntry.type === 'reload';
+            const f5CloseSession = <%= F5_CLOSE_SESSION %>;
+            if (isReloading && f5CloseSession) sessionStorage.clear();
+        </script>
+
+        <script type="module" src="/js/layout.js"></script>
+    </head>
+    <body>
+        <nav><a href="/">Home</a>&nbsp;&nbsp;&nbsp;<a href="/users">Users</a>&nbsp;&nbsp;&nbsp;<a href="/speechAI">Speech-AI</a>&nbsp;&nbsp;&nbsp;<a href="/translatorAI">Translator-AI</a>
+        &nbsp;&nbsp;&nbsp;<a href="/systemprompteditor">System Prompt Editor</a>&nbsp;&nbsp;&nbsp;<a href="/systemprompttestingAI">System Prompt Testing-AI</a>&nbsp;&nbsp;&nbsp;<a href="/audioanalyzerAI">Audio Analyzer AI</a>
+        &nbsp;&nbsp;&nbsp;<a href="/characterAI">Character Animations AI</a>&nbsp;&nbsp;&nbsp;<a href="/lightbulbAI">Colored Light Bulb AI</a></nav>
+        <main>
+            <div class="contenedor">
+<%- body -%>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 My Testing Web Site</p>
+        </footer>
+    </body>
+</html>
