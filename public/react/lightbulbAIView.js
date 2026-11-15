@@ -1,0 +1,1 @@
+import{i as e,n as t,r as n,t as r}from"./shared-jsx-runtime.js";var i=e(n(),1),a=e(t(),1),o=r();function s(){return(0,o.jsx)(`h2`,{children:`Colored Light Bulb AI`})}a.createRoot(document.getElementById(`root`)).render((0,o.jsx)(i.StrictMode,{children:(0,o.jsx)(s,{})}));
