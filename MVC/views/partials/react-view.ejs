@@ -1,11 +1,16 @@
+<!-- Stylesheet. specific to this view -->
+
 <link rel="stylesheet" href="/react/<%= viewName %>.css">
 
+<!-- Container where the React component associated with a view will be inserted -->
 <div id="root"></div>
 
+<!-- Data is passed to the component via the window object -->
 <% if (typeof initialData !== 'undefined') { %>
-  <script>
+  <script type="text/javascript">
     window.__INITIAL_DATA__ = <%- JSON.stringify(initialData) %>;
   </script>
 <% } %>
 
+<!-- Compiled script that renders the React component content within this view -->
 <script type="module" src="/react/<%= viewName %>.js"></script>
