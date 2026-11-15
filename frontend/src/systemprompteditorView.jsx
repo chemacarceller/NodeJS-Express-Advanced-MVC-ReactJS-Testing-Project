@@ -7,6 +7,9 @@ import '../public/js/systemprompteditor.js';
 
 function SystemPromptEditorView() {
 
+  const data = window.__INITIAL_DATA__ || {};
+  if (data.title) document.title = data.title;
+
   return (
     <h2>System Prompt Editor</h2>
   );

@@ -1,17 +1,21 @@
 import { useState } from 'react';
 
+
+// Component : UserPanel
 export default function UserPanel({ initialUsers = [], initialShowingActive = true }) {
 
   const [users, setUsers] = useState(initialUsers);
   const [showingActive, setShowingActive] = useState(initialShowingActive);
   const [loading, setLoading] = useState(false);
 
+  // Function that executes when the button state changes
   const handleToggleStatus = async () => {
 
     const nextStatus = !showingActive;
     setLoading(true);
 
     try {
+      
       const response = await fetch(`/users?active=${nextStatus}`, {
         headers: {
           'Accept': 'application/json'
@@ -24,11 +28,8 @@ export default function UserPanel({ initialUsers = [], initialShowingActive = tr
       setShowingActive(nextStatus);
 
     } catch (error) {
-
       console.error('Error while requesting users from the server:', error);
-
     } finally {
-
       setLoading(false);
     }
   };

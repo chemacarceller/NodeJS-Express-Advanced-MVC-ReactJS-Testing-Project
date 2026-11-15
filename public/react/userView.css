@@ -1,2 +1,2 @@
 /*! users.css */
-div#users-container{gap:1rem;margin-top:1rem;font-family:"sans-serif";display:grid}div#users-container div{border:1px solid #ccc;border-radius:8px;padding:1rem}div#users-container div span{color:#666}div.contenedor button{cursor:pointer;margin-bottom:1rem;padding:.5rem 1rem}
+.user-panel{background-color:#fff;border:1px solid #e2e8f0;border-radius:12px;flex-direction:column;gap:1.5rem;margin:2rem auto;padding:2rem;display:flex;box-shadow:0 4px 6px -1px #0000000d}div#users-container{gap:1rem;margin-top:1rem;font-family:"sans-serif";display:grid}div#users-container div{border:1px solid #ccc;border-radius:8px;padding:1rem}div#users-container div span{color:#666}div.contenedor button{cursor:pointer;width:200px;margin-bottom:1rem;padding:.5rem 1rem}

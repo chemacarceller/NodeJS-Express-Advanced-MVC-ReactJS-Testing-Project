@@ -1,6 +1,5 @@
 const UserService = require('../services/userService');
 
-
 class UserController {
 
   constructor() {
@@ -9,6 +8,7 @@ class UserController {
   }
 
   async listUsers(req, res, next) {
+
     try {
       
       // We retrieve the data via the Service class
@@ -26,7 +26,7 @@ class UserController {
 
       // If it is the first visit from the browser, we render the view
       res.render('userView', { 
-        title: 'UserList - My Testing Web Site',
+        title: 'Users - My Testing Web Site',
         usersList: users,
         showingActive: showActive
       });

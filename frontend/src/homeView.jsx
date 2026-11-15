@@ -8,6 +8,7 @@ import '../public/js/home.js';
 function HomeView() {
 
   const data = window.__INITIAL_DATA__ || {};
+  if (data.title) document.title = data.title;
   const message = data.message || 'This page is being dynamically rendered from the Express server.';
 
   return (
