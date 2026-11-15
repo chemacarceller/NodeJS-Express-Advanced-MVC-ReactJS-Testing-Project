@@ -2,6 +2,9 @@ import CharacterAnimationsAgent from './characterAnimationsAgent.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 
+    console.log("Testing characterAI.js... " + Math.floor(Math.random() * 100000));
+
+
     // We get the canvas where the character animations will be displayed
     const container = document.getElementById('canvas-container');
 

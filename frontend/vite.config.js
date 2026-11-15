@@ -22,7 +22,7 @@ export default defineConfig({
         systemprompteditorView: resolve(__dirname, 'src/systemprompteditorView.jsx'),
         systemprompttestingAIView: resolve(__dirname, 'src/systemprompttestingAIView.jsx'),
         //translatorAIView: resolve(__dirname, 'src/translatorAIView.jsx'),
-        //userView: resolve(__dirname, 'src/userView.jsx'),
+        userView: resolve(__dirname, 'src/userView.jsx'),
       },
       output: {
         entryFileNames: '[name].js',

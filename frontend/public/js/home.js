@@ -1,1 +1,3 @@
- console.log("Testing home.js... " + Math.floor(Math.random() * 100000));
+ document.addEventListener('DOMContentLoaded', () => {
+    console.log("Testing home.js... " + Math.floor(Math.random() * 100000));
+});

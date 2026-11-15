@@ -12,12 +12,23 @@ class UserController {
     try {
       
       // We retrieve the data via the Service class
-      const users = await this.userService.getUsersForList();
+      const showActive = req.query.active !== 'false';
+      const users = await this.userService.getUsersForList(showActive);
 
-      // Display the users view
+      // If React makes the request using fetch(), we return only the data in JSON format
+      if (req.headers.accept && req.headers.accept.includes('application/json')) {
+
+        return res.json({ 
+          usersList: users, 
+          showingActive: showActive 
+        });
+      }
+
+      // If it is the first visit from the browser, we render the view
       res.render('userView', { 
         title: 'UserList - My Testing Web Site',
-        usersList: users 
+        usersList: users,
+        showingActive: showActive
       });
 
     } catch (error) {

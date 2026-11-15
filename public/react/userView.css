@@ -1,0 +1,2 @@
+/*! users.css */
+div#users-container{gap:1rem;margin-top:1rem;font-family:"sans-serif";display:grid}div#users-container div{border:1px solid #ccc;border-radius:8px;padding:1rem}div#users-container div span{color:#666}div.contenedor button{cursor:pointer;margin-bottom:1rem;padding:.5rem 1rem}

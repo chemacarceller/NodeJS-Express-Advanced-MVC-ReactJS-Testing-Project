@@ -1,1 +1,6 @@
-<%- include('partials/react-view', { viewName: 'userView' }) %>
+<%- include('partials/react-view', { 
+  viewName: 'userView',
+  initialData: { 
+    usersList: typeof usersList !== 'undefined' ? usersList : []
+  }
+}) %>

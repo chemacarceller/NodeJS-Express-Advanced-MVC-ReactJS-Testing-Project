@@ -96,6 +96,8 @@ const parameters = {
 
 document.addEventListener('DOMContentLoaded', async () => {
 
+  console.log("Testing translatorAI.js... " + Math.floor(Math.random() * 100000));
+
   // We do not enable the buttons until the init() method has been executed.
   btnSend.disabled = true; btnVoice.disabled = true;
   try { await init(); }
