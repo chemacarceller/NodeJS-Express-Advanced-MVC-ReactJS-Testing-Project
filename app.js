@@ -58,6 +58,9 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (CSS, images, client-side JS) from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+// To have /react point directly to frontend/public:
+app.use('/react', express.static(path.join(__dirname, 'frontend', 'public')));
+
 // We enable the template system (Layouts) to have a common base design.
 app.use(expressLayouts); 
 

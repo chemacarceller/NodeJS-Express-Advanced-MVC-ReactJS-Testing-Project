@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import '../public/css/home.css';
+
+import '../public/js/home.js';
+
 function HomeView() {
 
   const data = window.__INITIAL_DATA__ || {};

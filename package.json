@@ -8,7 +8,7 @@
     "start": "npm run build:react && node ./bin/www",
     "dev:react": "npx vite build --watch --config frontend/vite.config.js",
     "dev:node": "node --watch ./bin/www",
-    "dev": "npm run dev:react & npm run dev:node"
+    "dev": "concurrently \"npm run dev:react\" \"npm run dev:node\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -25,5 +25,8 @@
     "pug": "^3.0.4",
     "say": "^0.16.0",
     "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
   }
 }
