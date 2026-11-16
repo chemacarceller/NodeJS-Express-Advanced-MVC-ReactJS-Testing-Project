@@ -18,10 +18,10 @@ export default defineConfig({
         audioanalyzerAIView: resolve(__dirname, 'src/audioanalyzerAIView.jsx'),
         //characterAIView: resolve(__dirname, 'src/characterAIView.jsx'),
         lightbulbAIView: resolve(__dirname, 'src/lightbulbAIView.jsx'),
-        //speechAIView: resolve(__dirname, 'src/speechAIView.jsx'),
+        speechAIView: resolve(__dirname, 'src/speechAIView.jsx'),
         systemprompteditorView: resolve(__dirname, 'src/systemprompteditorView.jsx'),
         systemprompttestingAIView: resolve(__dirname, 'src/systemprompttestingAIView.jsx'),
-        //translatorAIView: resolve(__dirname, 'src/translatorAIView.jsx'),
+        translatorAIView: resolve(__dirname, 'src/translatorAIView.jsx'),
         userView: resolve(__dirname, 'src/userView.jsx'),
       },
       output: {

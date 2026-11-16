@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import UserPanel from "./components/UserPanel";
+import UserPanel from "./components/users/UserPanel";
 
 // We import the CSS for this page; this is not strictly necessary since we are using React.
 // The code is specific to each individual component.
