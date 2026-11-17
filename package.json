@@ -2,13 +2,16 @@
   "name": "AMVC_ReactJS_Testing",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "install:all": "npm install && npm install --prefix frontend",
-    "build:react": "npm run build --prefix frontend",
-    "start": "npm run build:react && node ./bin/www",
-    "dev:react": "npx vite build --watch --config frontend/vite.config.js",
-    "dev:node": "node --watch ./bin/www",
-    "dev": "concurrently \"npm run dev:react\" \"npm run dev:node\""
+ "scripts": {
+  "install:all": "npm install && npm install --prefix frontend",
+  "build:react": "npm run build --prefix frontend",
+  "dev:react": "npx vite build --watch --config frontend/vite.config.js",
+  "dev:node": "cross-env DEBUG=mi-servidor:* node --watch ./bin/www",
+  "dev": "concurrently \"npm run dev:react\" \"npm run dev:node\"",
+  "logs": "pm2 logs AMVC_ReactJS_Testing",
+  "stop": "pm2 stop AMVC_ReactJS_Testing",
+  "restart": "npm run build:react && cross-env NODE_ENV=production pm2 restart AMVC_ReactJS_Testing --update-env",
+  "start": "npm run build:react && cross-env NODE_ENV=production pm2 start ./bin/www --name \"AMVC_ReactJS_Testing\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -27,6 +30,7 @@
     "three": "^0.187.0"
   },
   "devDependencies": {
-    "concurrently": "^10.0.7"
+    "concurrently": "^10.0.7",
+    "cross-env": "^10.1.0"
   }
 }
