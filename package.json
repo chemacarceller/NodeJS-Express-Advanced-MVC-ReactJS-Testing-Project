@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "install:all": "npm install && npm install --prefix frontend",
+    "install:all": "npm install --no-audit && npm install --no-audit --prefix frontend && npm audit --omit=dev && npm audit --omit=dev --prefix frontend",
     "build:react": "npm run build --prefix frontend",
     "dev:react": "npx --prefix frontend vite build --watch --config frontend/vite.config.js",
-    "dev:node": "cross-env DEBUG=mi-servidor:* node --watch ./bin/www",
+    "dev:node": "cross-env DEBUG=AMVC_ReactJS_Testing:* node --watch ./bin/www",
     "dev": "concurrently \"npm run dev:react\" \"npm run dev:node\"",
     "logs": "pm2 logs AMVC_ReactJS_Testing",
     "stop": "pm2 stop AMVC_ReactJS_Testing",
@@ -24,7 +24,6 @@
     "http-errors": "~1.6.3",
     "mongoose": "^9.10.1",
     "morgan": "^1.12.1",
-    "ollama": "^0.6.4",
     "pug": "^3.0.4",
     "say": "^0.16.0",
     "three": "^0.187.0"
