@@ -19,7 +19,7 @@ const MODEL_PARAMETERS = {
 const INPUT_LANGUAGES = [{ value: 'es-ES', label: 'Spanish' }];
 
 const OUTPUT_LANGUAGES = [
-  { value: 'en-EN', label: 'English', promptName: 'english' },
+  { value: 'en-US', label: 'English', promptName: 'english' },
   { value: 'fr-FR', label: 'French', promptName: 'french' },
   { value: 'de-DE', label: 'German', promptName: 'german' },
   { value: 'es-ES', label: 'Spanish', promptName: 'spanish' },
@@ -90,7 +90,7 @@ export default function TranslatorAIPage() {
     const promptWrapper = `TASK: Translate the following text.
 TARGET LANGUAGE: ${targetLanguage}
 CRITICAL RULE: Output ONLY the direct translation. Do not reply, do not explain, do not add introductory text, and do not repeat the input if it matches the target language.
-ORIGINAL TEXT: "{{message}}"
+ORIGINAL TEXT: {{message}}
 TRANSLATION:`;
 
     setResponseText('Thinking...');
@@ -104,7 +104,11 @@ TRANSLATION:`;
         'generate',
         promptWrapper
       );
-      const formattedResponse = `${aiResponse} `;
+
+      const cleanResponse = aiResponse.trim().replace(/^["']|["']$/g, '');
+      const formattedResponse = `${cleanResponse} `;
+
+      setResponseText(formattedResponse);
 
       setResponseText(formattedResponse);
       processAndSpeakResponse(formattedResponse);

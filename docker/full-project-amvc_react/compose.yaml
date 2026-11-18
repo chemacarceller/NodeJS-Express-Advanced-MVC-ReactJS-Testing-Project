@@ -1,0 +1,11 @@
+name: amvc-react-project
+services: 
+  amvc_react:
+    build:
+      context: ../..
+      dockerfile: docker/full-project-amvc_react/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "4503:4503"
+    env_file:
+      - ../../.env
